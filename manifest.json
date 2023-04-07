@@ -1,0 +1,55 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "static/monicaLogo.png",
+         "16": "static/monicaLogo.png",
+         "32": "static/monicaLogo.png",
+         "48": "static/monicaLogo.png"
+      }
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "run-monica": {
+         "description": "Run Monica on the current page",
+         "suggested_key": {
+            "default": "Ctrl+M",
+            "mac": "Command+M"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "js": [ "content.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "The ChatGPT Powered Copilot that answers your question and writes your email. Works on all websites.",
+   "externally_connectable": {
+      "matches": [ "https://monica.im/*" ]
+   },
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "static/monicaLogo.png",
+      "16": "static/monicaLogo.png",
+      "32": "static/monicaLogo.png",
+      "48": "static/monicaLogo.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjxmSWBNBUR+4suRSplh5ghzstYHIVE/T8bP3i8v6gz+8gX+c73tt0ws22l1blg+i6C/ToCHZdfX6sVsVP5FT1tWJBLbokEly+P5SAyn1VBhsStI1giW7fYGro7qQsGtN+Az9q3hJZtZq+PEb7qPO2/BeWQds/WvmUXDyW1sLXjkSeLV4dileEFt2dc/ZSUGgWkpg7Ivqk3aJ2RpIER3iMrWkwsyOD1SpjnNVb878RkZKbqB1yxyRvkB7Ai6UF970dm3t/mIbhGSOhmrqqe8QTn8yLug0dh8rUBL8oHI5EfLPsJ7N3+6C1bnv6P0dluRo+oImb7Mwzi2yR6BjmoyTjQIDAQAB",
+   "manifest_version": 3,
+   "name": "Monica — Your ChatGPT Copilot in Chrome",
+   "permissions": [ "storage", "scripting", "commands" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.0",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "content.css" ]
+   }, {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "content.js" ]
+   }, {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "static/*" ]
+   } ]
+}
